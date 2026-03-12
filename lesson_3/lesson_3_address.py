@@ -1,22 +1,14 @@
 class Address:
-    def __init__(self, index, city, street, house, flat):
-          self.index = index
-          self.city= city
-          self.street = street
-          self.house = house
-          self.flat = flat
+    def __init__(self, city, street, house, apartment, index):
+        self.city = city
+        self.street = street
+        self.house = house
+        self.apartment = apartment
+        self.index = index
 
-          def get_index(self):
-              return self.index
+    def __str__(self):
+        return f"{self.index}, {self.city}, {self.street}, {self.house}-{self.apartment}"
 
-          def get_city(self):
-              return self.city
-
-          def get_street(self):
-              return self.street
-
-          def get_house(self):
-              return self.house
-
-          def get_flat(self):
-              return self.flat
+    def __repr__(self):
+        return (f"Address(city={self.city!r}, street={self.street!r}, house={self.house!r}, "
+                f"apartment={self.apartment!r}, index={self.index!r})")

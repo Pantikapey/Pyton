@@ -5,14 +5,10 @@ class Mailing:
         self.cost = cost
         self.track = track
 
-       def get_to_address(self):
-           return self.to_address
+    def __str__(self):
+        return (f"Mailing(to={self.to_address}, from={self.from_address}, "
+                f"cost={self.cost}, track='{self.track}')")
 
-       def get_from_address(self):
-           return self.from_address
-
-       def get_cost(self):
-           return self.cost
-
-       def get_track(self):
-           return self.track
+    def __repr__(self):
+        return (f"Mailing(to_address={self.to_address!r}, "
+                f"from_address={self.from_address!r}, cost={self.cost!r}, track={self.track!r})")track
