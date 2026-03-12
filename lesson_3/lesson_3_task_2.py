@@ -1,10 +1,14 @@
 from smartphone import Smartphone
 
-# Создаем экземпляр класса Smartphone
-my_smartphone = Smartphone("Nokia", 3120, +7985)
+# Создаем список телефонов (Catalog)
+Catalog = [
+    Smartphone("Nokia", 3120, +7985),
+    Smartphone("Nokia", 3133, +8214),
+    Smartphone("Nokia", 3154, +6544),
+    Smartphone("Nokia", 3166, +1245),
+    Smartphone("Nokia", 3220, +2541)
+]
 
-# Вызываем методы и выводим результаты
-print(my_smartphone.get_name())  # Ожидаемый результат: "Nokia"
-print(my_smartphone.get_model())  # Ожидаемый результат: 3120
-print(my_smartphone.get_number())  # Ожидаемый результат: +7985
-print(my_smartphone.get_smartphone_info())  # Ожид. рез.:"Nokia",3120,+7985.
+# Печатаем каталог
+for Smartphone in Catalog:
+    print(f"{Smartphone.name}-{Smartphone.model}-{Smartphone.number}")
