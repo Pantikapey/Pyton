@@ -23,3 +23,4 @@ def test_capitalize_positive(input_str, expected):
 ])
 def test_capitalize_negative(input_str, expected):
     assert string_utils.capitalize(input_str) == expected
+
