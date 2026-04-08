@@ -1,9 +1,18 @@
-  from selenium.webdriver.firefox.options import Options
-    from selenium.webdriver.firefox.firefox_profile import FirefoxProfile
+import os
+import subprocess
+import sys
 
-    options = Options()
-    firefox_profile = FirefoxProfile()
-    firefox_profile.set_preference("javascript.enabled", False)
-    options.profile = firefox_profile
+import pytest
+from selenium import webdriver
 
-    driver = webdriver.Firefox(options=options)
+def test_css_selector(driver):
+    driver = webdriver.Chrome()
+    driver.get("http://the-internet.herokuapp.com/inputs")
+    element = driver.find_element(By.CSS_SELECTOR, ".example > input:nth-child(2)")
+
+    assert element is not None
+    assert element.get_attribute("value") == "Jane"
+
+    driver.quit()
+
+    
