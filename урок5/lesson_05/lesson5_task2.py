@@ -1,11 +1,13 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-driver = webdriver.Chrome()
 
-driver.get("http://uitestingplayground.com/dynamicid.")
-for i in range(3)
+def test_id(driver):
+    driver = webdriver.Chrome()
+    driver.get("http://uitestingplayground.com/dynamicid")
+    element = driver.find_element(By.ID, "05a30e8e-aea1-e10e-4f51-e85db3872271")
 
-blue_button = driver.find_element(By.CSS_SELECTOR, 'dir.auto').click()
+    assert element is not None
+    assert element.get_attribute("value") == "Doe"
 
-driver.quit()
+    driver.quit()
