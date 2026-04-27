@@ -1,14 +1,9 @@
-import os
-import subprocess
-import sys
-
-import pytest
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 
+driver = webdriver.Firefox()
+driver.get("http://the-internet.herokuapp.com/login")
 
-def test_basic_options():
-    options = webdriver.FirefoxOptions()
-    driver = webdriver.Firefox(options=options)
+driver.quit()
 
-    driver.quit()
 
