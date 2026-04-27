@@ -1,13 +1,9 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+driver = webdriver.Chrome()
+driver.get(" http://uitestingplayground.com/dynamicid.")
 
-def test_id(driver):
-    driver = webdriver.Chrome()
-    driver.get("http://uitestingplayground.com/dynamicid")
-    element = driver.find_element(By.ID, "05a30e8e-aea1-e10e-4f51-e85db3872271")
+driver.find_element(By.LINK_TEXT, "Button with Dynamic ID").click()
 
-    assert element is not None
-    assert element.get_attribute("value") == "Doe"
-
-    driver.quit()
+driver.quit()
